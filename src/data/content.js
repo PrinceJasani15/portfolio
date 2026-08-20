@@ -16,7 +16,7 @@ export const personal = {
   phone: '+91-9662111334',
   github: 'https://github.com/PrinceJasani15',
   linkedin: 'https://www.linkedin.com/in/prince-jasani-305929420/',
-  resume: '/resume.pdf',
+  resume: '/Prince_Jasani_08082026.pdf',
 }
 
 export const navigation = [
@@ -33,7 +33,7 @@ export const navigation = [
 export const externalLinks = [
   { label: 'GitHub', href: 'https://github.com/PrinceJasani15', icon: 'github' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/prince-jasani-305929420/', icon: 'linkedin' },
-  { label: 'Resume', href: '/resume.pdf', icon: 'file' },
+  { label: 'Resume', href: '/Prince_Jasani_08082026.pdf', icon: 'file' },
 ]
 
 export const about = {

@@ -6,6 +6,7 @@ const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Stack', href: '#skills' },
+  { label: 'Services', href: '#services' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -40,19 +41,19 @@ function Navbar({ theme, toggleTheme }) {
     >
       <nav className="container flex items-center justify-between h-[52px]" aria-label="Main">
         {/* Left: name */}
-        <a href="#hero" className="font-mono text-[0.75rem] font-medium uppercase tracking-wider text-[var(--text)] relative z-50">
+        <a href="#hero" className="text-[0.9375rem] font-bold tracking-tight text-[var(--text)] relative z-50" style={{ fontFamily: "'Playfair Display', serif" }}>
           {personal.name}
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-5">
+        <div className="hidden md:flex items-center gap-3 lg:gap-5">
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} className="font-mono text-[0.6875rem] uppercase tracking-wide text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+            <a key={item.href} href={item.href} className="font-mono text-[0.6875rem] uppercase tracking-wide text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1.5px] after:bg-[var(--accent)] hover:after:w-full after:transition-all after:duration-200 py-1">
               {item.label}
             </a>
           ))}
           <span className="w-px h-3 bg-[var(--border)]" aria-hidden="true" />
-          <a href={personal.resume} target="_blank" rel="noopener noreferrer" className="font-mono text-[0.6875rem] uppercase tracking-wide text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
+          <a href={personal.resume} target="_blank" rel="noopener noreferrer" className="font-mono text-[0.6875rem] uppercase tracking-wide text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors duration-200 relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[1.5px] after:bg-[var(--accent)] hover:after:w-full after:transition-all after:duration-200 py-1">
             Resume
           </a>
           <button
@@ -94,28 +95,36 @@ function Navbar({ theme, toggleTheme }) {
       </nav>
 
       {/* Mobile menu */}
-      {open && (
-        <div className="md:hidden fixed inset-0 bg-[var(--bg)] z-40 flex flex-col justify-center" role="dialog" aria-modal="true">
-          <div className="container space-y-4">
-            {navItems.map((item, i) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="block font-mono text-lg uppercase tracking-wider text-[var(--text)] hover:text-[var(--accent)] transition-colors"
-              >
-                <span className="text-[var(--text-faint)] text-sm mr-3">{String(i + 1).padStart(2, '0')}</span>
-                {item.label}
-              </a>
-            ))}
-            <div className="pt-4 border-t border-[var(--border)]">
-              <a href={personal.resume} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="font-mono text-sm uppercase tracking-wider text-[var(--text-muted)] hover:text-[var(--text)] transition-colors">
-                Resume ↗
-              </a>
-            </div>
+      <div
+        className={`md:hidden fixed inset-0 bg-[var(--bg)] z-40 flex flex-col justify-center transition-all duration-300 ease-out ${
+          open ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+        }`}
+        role="dialog"
+        aria-modal="true"
+        aria-hidden={!open}
+      >
+        <div className="container space-y-2">
+          {navItems.map((item, i) => (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setOpen(false)}
+              className={`block font-mono text-lg sm:text-xl uppercase tracking-wider text-[var(--text)] hover:text-[var(--accent)] transition-all duration-300 py-2 min-h-[44px] flex items-center ${
+                open ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+              }`}
+              style={{ transitionDelay: open ? `${i * 50}ms` : '0ms' }}
+            >
+              <span className="text-[var(--text-faint)] text-sm mr-3">{String(i + 1).padStart(2, '0')}</span>
+              {item.label}
+            </a>
+          ))}
+          <div className="pt-4 border-t border-[var(--border)]">
+            <a href={personal.resume} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="font-mono text-sm uppercase tracking-wider text-[var(--text-muted)] hover:text-[var(--text)] transition-colors py-2 inline-block min-h-[44px] flex items-center">
+              Resume ↗
+            </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   )
 }

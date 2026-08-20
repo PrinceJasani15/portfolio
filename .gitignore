@@ -1,24 +1,35 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-
 # Dependencies
 node_modules/
 
-# Build
+# Build output
 dist/
+build/
 
-# Environment
+# Environment variables
 .env
 .env.local
 .env.*.local
 
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
 # Editor
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
+*.swp
+*.swo
 
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
