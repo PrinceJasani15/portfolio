@@ -108,16 +108,16 @@ function Hero() {
                 <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 sm:w-8 h-4 sm:h-8 border-b border-l border-[var(--border)] opacity-40" />
 
                 {/* Orbital arc — primary */}
-                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] rounded-full border border-[var(--accent)] opacity-15 -z-10 orbital-spin" style={{ marginLeft: '-55%', marginTop: '-55%' }} />
+                <div className="absolute top-1/2 left-1/2 -z-10 orbital-spin rounded-full border border-[var(--accent)] opacity-15" style={{ width: '110%', aspectRatio: '1', marginLeft: '-55%', marginTop: '-55%' }} />
 
                 {/* Orbital arc — secondary (smaller, different speed) */}
-                <div className="absolute top-1/2 left-1/2 w-[90%] h-[90%] rounded-full border border-dashed border-[var(--border)] opacity-20 -z-10" style={{ marginLeft: '-45%', marginTop: '-45%', animation: 'orbital 60s linear infinite reverse' }} />
+                <div className="absolute top-1/2 left-1/2 -z-10 rounded-full border border-dashed border-[var(--border)] opacity-20" style={{ width: '90%', aspectRatio: '1', marginLeft: '-45%', marginTop: '-45%', animation: 'orbital 60s linear infinite reverse' }} />
 
                 {/* Accent dots on orbital */}
-                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -z-10 orbital-spin" style={{ marginLeft: '-55%', marginTop: '-55%', animationDelay: '-10s' }}>
+                <div className="absolute top-1/2 left-1/2 -z-10 orbital-spin" style={{ width: '110%', aspectRatio: '1', marginLeft: '-55%', marginTop: '-55%', animationDelay: '-10s' }}>
                   <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[var(--accent)] rounded-full opacity-70" />
                 </div>
-                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -z-10 orbital-spin" style={{ marginLeft: '-55%', marginTop: '-55%', animationDelay: '-30s' }}>
+                <div className="absolute top-1/2 left-1/2 -z-10 orbital-spin" style={{ width: '110%', aspectRatio: '1', marginLeft: '-55%', marginTop: '-55%', animationDelay: '-30s' }}>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 bg-[var(--text-faint)] rounded-full opacity-50" />
                 </div>
 

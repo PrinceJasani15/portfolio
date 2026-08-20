@@ -6,7 +6,7 @@ function Contact() {
   const ref = useScrollReveal()
   const formRef = useScrollReveal()
 
-  const [formData, setFormData] = useState({ name: '', email: '', type: 'hire', message: '' })
+  const [formData, setFormData] = useState({ name: '', email: '', type: '', message: '' })
   const [result, setResult] = useState('')
   const [submitting, setSubmitting] = useState(false)
 
@@ -45,7 +45,7 @@ function Contact() {
 
       if (data.success) {
         setResult('success')
-        setFormData({ name: '', email: '', type: 'hire', message: '' })
+        setFormData({ name: '', email: '', type: '', message: '' })
       } else {
         setResult('error')
       }
@@ -133,9 +133,11 @@ function Contact() {
                     name="type"
                     value={formData.type}
                     onChange={handleChange}
+                    required
                     className="w-full bg-[var(--bg)] border border-[var(--border)] px-3 py-2.5 text-[0.8125rem] text-[var(--text)] focus:border-[var(--accent)] focus:outline-none transition-colors duration-200 cursor-pointer"
                     style={{ colorScheme: 'dark light' }}
                   >
+                    <option value="" disabled>Select role</option>
                     <option value="hire">Hire for a full-time role</option>
                     <option value="freelance">Hire for freelance project</option>
                     <option value="collaborate">Collaborate on a project</option>
