@@ -105,7 +105,7 @@ function Contact() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Enter your name"
                     className="w-full bg-[var(--bg)] border border-[var(--border)] px-3 py-2.5 text-[0.8125rem] text-[var(--text)] placeholder:text-[var(--text-faint)] focus:border-[var(--accent)] focus:outline-none transition-colors duration-200"
                   />
                 </div>
@@ -120,7 +120,7 @@ function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@company.com"
+                    placeholder="Enter your email"
                     className="w-full bg-[var(--bg)] border border-[var(--border)] px-3 py-2.5 text-[0.8125rem] text-[var(--text)] placeholder:text-[var(--text-faint)] focus:border-[var(--accent)] focus:outline-none transition-colors duration-200"
                   />
                 </div>

@@ -34,8 +34,8 @@ function Navbar({ theme, toggleTheme }) {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
-        scrolled ? 'bg-[var(--bg)]/95 backdrop-blur-sm border-b border-[var(--border)]' : ''
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 bg-[var(--bg)] md:bg-transparent ${
+        scrolled ? 'md:bg-[var(--bg)]/95 backdrop-blur-sm border-b border-[var(--border)]' : ''
       }`}
       role="banner"
     >

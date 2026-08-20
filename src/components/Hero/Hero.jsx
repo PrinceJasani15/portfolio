@@ -66,22 +66,22 @@ function Hero() {
 
           {/* RIGHT — portrait composition (5 cols) */}
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end order-2 lg:order-2 overflow-visible">
-            <div className="relative w-[180px] min-[360px]:w-[220px] min-[400px]:w-[260px] sm:w-[300px] lg:w-[330px] portrait-entrance">
+            <div className="relative w-[220px] min-[400px]:w-[260px] sm:w-[300px] lg:w-[330px] portrait-entrance">
 
               {/* Overflow container for decorative elements */}
               <div className="absolute inset-0 overflow-visible pointer-events-none" aria-hidden="true">
                 {/* === BACKGROUND COMPOSITION === */}
 
                 {/* Gradient glow behind portrait */}
-                <div className="absolute inset-0 -z-20 scale-[1.3] opacity-[0.12] blur-[40px] hidden sm:block"
+                <div className="absolute inset-0 -z-20 scale-[1.3] opacity-[0.12] blur-[40px]"
                   style={{ background: 'radial-gradient(ellipse at center, var(--accent) 0%, transparent 70%)' }}
                 />
 
                 {/* Large geometric frame — offset rectangle */}
-                <div className="absolute top-[8%] left-[8%] right-[-4%] bottom-[-4%] border border-[var(--border)] opacity-40 -z-10 hidden sm:block" />
+                <div className="absolute top-[8%] left-[8%] right-[-4%] bottom-[-4%] border border-[var(--border)] opacity-40 -z-10" />
 
                 {/* Inner technical grid pattern */}
-                <div className="absolute inset-[10%] -z-10 opacity-[0.07] hidden min-[400px]:block"
+                <div className="absolute inset-[10%] -z-10 opacity-[0.07]"
                   style={{
                     backgroundImage: `
                       linear-gradient(var(--text-faint) 1px, transparent 1px),
@@ -92,7 +92,7 @@ function Hero() {
                 />
 
                 {/* Dot matrix pattern — outer area (contained) */}
-                <div className="absolute inset-0 -z-10 opacity-[0.05] hidden sm:block"
+                <div className="absolute inset-0 -z-10 opacity-[0.05]"
                   style={{
                     backgroundImage: 'radial-gradient(circle, var(--text-faint) 1px, transparent 1px)',
                     backgroundSize: '12px 12px',
@@ -104,36 +104,36 @@ function Hero() {
                 <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-8 sm:w-16 h-8 sm:h-16 border-b-2 border-r-2 border-[var(--accent)] opacity-80" />
 
                 {/* Additional corner marks — subtle */}
-                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-4 sm:w-8 h-4 sm:h-8 border-t border-r border-[var(--border)] opacity-40 hidden sm:block" />
-                <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 sm:w-8 h-4 sm:h-8 border-b border-l border-[var(--border)] opacity-40 hidden sm:block" />
+                <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-4 sm:w-8 h-4 sm:h-8 border-t border-r border-[var(--border)] opacity-40" />
+                <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 sm:w-8 h-4 sm:h-8 border-b border-l border-[var(--border)] opacity-40" />
 
                 {/* Orbital arc — primary */}
-                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] rounded-full border border-[var(--accent)] opacity-15 -z-10 orbital-spin hidden sm:block" style={{ marginLeft: '-55%', marginTop: '-55%' }} />
+                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] rounded-full border border-[var(--accent)] opacity-15 -z-10 orbital-spin" style={{ marginLeft: '-55%', marginTop: '-55%' }} />
 
                 {/* Orbital arc — secondary (smaller, different speed) */}
-                <div className="absolute top-1/2 left-1/2 w-[90%] h-[90%] rounded-full border border-dashed border-[var(--border)] opacity-20 -z-10 hidden sm:block" style={{ marginLeft: '-45%', marginTop: '-45%', animation: 'orbital 60s linear infinite reverse' }} />
+                <div className="absolute top-1/2 left-1/2 w-[90%] h-[90%] rounded-full border border-dashed border-[var(--border)] opacity-20 -z-10" style={{ marginLeft: '-45%', marginTop: '-45%', animation: 'orbital 60s linear infinite reverse' }} />
 
                 {/* Accent dots on orbital */}
-                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -z-10 orbital-spin hidden sm:block" style={{ marginLeft: '-55%', marginTop: '-55%', animationDelay: '-10s' }}>
-                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-[var(--accent)] rounded-full opacity-70" />
+                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -z-10 orbital-spin" style={{ marginLeft: '-55%', marginTop: '-55%', animationDelay: '-10s' }}>
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[var(--accent)] rounded-full opacity-70" />
                 </div>
-                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -z-10 orbital-spin hidden sm:block" style={{ marginLeft: '-55%', marginTop: '-55%', animationDelay: '-30s' }}>
+                <div className="absolute top-1/2 left-1/2 w-[110%] h-[110%] -z-10 orbital-spin" style={{ marginLeft: '-55%', marginTop: '-55%', animationDelay: '-30s' }}>
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 bg-[var(--text-faint)] rounded-full opacity-50" />
                 </div>
 
                 {/* Horizontal scan line — contained */}
-                <div className="absolute top-[30%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20 -z-10 hidden sm:block" />
+                <div className="absolute top-[30%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20 -z-10" />
 
                 {/* Coordinate labels */}
-                <span className="absolute top-0 right-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60 hidden sm:block pointer-events-none">
+                <span className="absolute top-0 right-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60 pointer-events-none">
                   21.1702°N
                 </span>
-                <span className="absolute bottom-10 left-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60 hidden sm:block pointer-events-none">
+                <span className="absolute bottom-10 left-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60 pointer-events-none">
                   72.8311°E
                 </span>
 
                 {/* Status indicator */}
-                <div className="absolute top-2 left-2 items-center gap-1.5 hidden sm:flex pointer-events-none">
+                <div className="absolute top-2 left-2 flex items-center gap-1.5 pointer-events-none">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 opacity-70" />
                   <span className="label text-[0.5rem] text-[var(--text-faint)] opacity-60">SYS.ACTIVE</span>
                 </div>
