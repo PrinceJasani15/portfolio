@@ -27,7 +27,7 @@ function Contact() {
     }
 
     const submitData = new FormData()
-    submitData.append('access_key', import.meta.env.VITE_WEB3FORMS_KEY)
+    submitData.append('access_key', '0b3f1fa4-bc5f-43bf-8c39-5b0dc62a8438')
     submitData.append('name', formData.name)
     submitData.append('email', formData.email)
     submitData.append("I'm Looking To", typeLabels[formData.type] || formData.type)
