@@ -68,34 +68,44 @@ function Hero() {
           <div className="lg:col-span-5 relative flex justify-center lg:justify-end order-2 lg:order-2 overflow-visible">
             <div className="relative w-[220px] min-[400px]:w-[260px] sm:w-[300px] lg:w-[330px] portrait-entrance">
 
-              {/* Overflow container for decorative elements */}
-              <div className="absolute inset-0 overflow-visible pointer-events-none" aria-hidden="true">
-                {/* === BACKGROUND COMPOSITION === */}
+              {/* Orbital motion circles — centered on portrait */}
+              <div className="absolute inset-0 flex items-center justify-center overflow-visible pointer-events-none" aria-hidden="true">
+                {/* Primary orbital — large, slow rotation */}
+                <div className="absolute orbital-spin" style={{ width: '130%', aspectRatio: '1', top: '50%', left: '50%', marginLeft: '-65%', marginTop: '-65%' }}>
+                  <div className="w-full h-full rounded-full border border-[var(--accent)] opacity-20" />
+                  {/* Accent dot on orbit */}
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2.5 sm:w-3 h-2.5 sm:h-3 bg-[var(--accent)] rounded-full opacity-80" />
+                  <span className="absolute bottom-[10%] right-0 w-1.5 h-1.5 bg-[var(--accent)] rounded-full opacity-40" />
+                </div>
 
+                {/* Secondary orbital — medium, reverse rotation */}
+                <div className="absolute" style={{ width: '105%', aspectRatio: '1', top: '50%', left: '50%', marginLeft: '-52.5%', marginTop: '-52.5%', animation: 'orbital 50s linear infinite reverse' }}>
+                  <div className="w-full h-full rounded-full border border-dashed border-[var(--border)] opacity-30" />
+                  <span className="absolute top-[15%] right-0 w-2 h-2 bg-[var(--text-faint)] rounded-full opacity-50" />
+                </div>
+
+                {/* Tertiary orbital — small, fast */}
+                <div className="absolute orbital-spin" style={{ width: '80%', aspectRatio: '1', top: '50%', left: '50%', marginLeft: '-40%', marginTop: '-40%', animationDuration: '25s' }}>
+                  <div className="w-full h-full rounded-full border border-[var(--accent)] opacity-10" />
+                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 bg-[var(--accent)] rounded-full opacity-60" />
+                </div>
+              </div>
+
+              {/* Decorative background elements */}
+              <div className="absolute inset-0 overflow-visible pointer-events-none" aria-hidden="true">
                 {/* Gradient glow behind portrait */}
-                <div className="absolute inset-0 -z-20 scale-[1.3] opacity-[0.12] blur-[40px]"
+                <div className="absolute inset-0 -z-20 scale-[1.4] opacity-[0.15] blur-[50px]"
                   style={{ background: 'radial-gradient(ellipse at center, var(--accent) 0%, transparent 70%)' }}
                 />
 
-                {/* Large geometric frame — offset rectangle */}
-                <div className="absolute top-[8%] left-[8%] right-[-4%] bottom-[-4%] border border-[var(--border)] opacity-40 -z-10" />
-
                 {/* Inner technical grid pattern */}
-                <div className="absolute inset-[10%] -z-10 opacity-[0.07]"
+                <div className="absolute inset-[5%] -z-10 opacity-[0.05]"
                   style={{
                     backgroundImage: `
                       linear-gradient(var(--text-faint) 1px, transparent 1px),
                       linear-gradient(90deg, var(--text-faint) 1px, transparent 1px)
                     `,
-                    backgroundSize: '24px 24px',
-                  }}
-                />
-
-                {/* Dot matrix pattern — outer area (contained) */}
-                <div className="absolute inset-0 -z-10 opacity-[0.05]"
-                  style={{
-                    backgroundImage: 'radial-gradient(circle, var(--text-faint) 1px, transparent 1px)',
-                    backgroundSize: '12px 12px',
+                    backgroundSize: '20px 20px',
                   }}
                 />
 
@@ -103,52 +113,42 @@ function Hero() {
                 <div className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 w-8 sm:w-16 h-8 sm:h-16 border-t-2 border-l-2 border-[var(--accent)] opacity-80" />
                 <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 w-8 sm:w-16 h-8 sm:h-16 border-b-2 border-r-2 border-[var(--accent)] opacity-80" />
 
-                {/* Additional corner marks — subtle */}
+                {/* Additional corner marks */}
                 <div className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-4 sm:w-8 h-4 sm:h-8 border-t border-r border-[var(--border)] opacity-40" />
                 <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-4 sm:w-8 h-4 sm:h-8 border-b border-l border-[var(--border)] opacity-40" />
 
-                {/* Orbital arc — primary */}
-                <div className="absolute top-1/2 left-1/2 -z-10 orbital-spin rounded-full border border-[var(--accent)] opacity-15" style={{ width: '110%', aspectRatio: '1', marginLeft: '-55%', marginTop: '-55%' }} />
-
-                {/* Orbital arc — secondary (smaller, different speed) */}
-                <div className="absolute top-1/2 left-1/2 -z-10 rounded-full border border-dashed border-[var(--border)] opacity-20" style={{ width: '90%', aspectRatio: '1', marginLeft: '-45%', marginTop: '-45%', animation: 'orbital 60s linear infinite reverse' }} />
-
-                {/* Accent dots on orbital */}
-                <div className="absolute top-1/2 left-1/2 -z-10 orbital-spin" style={{ width: '110%', aspectRatio: '1', marginLeft: '-55%', marginTop: '-55%', animationDelay: '-10s' }}>
-                  <span className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 sm:w-2.5 h-2 sm:h-2.5 bg-[var(--accent)] rounded-full opacity-70" />
-                </div>
-                <div className="absolute top-1/2 left-1/2 -z-10 orbital-spin" style={{ width: '110%', aspectRatio: '1', marginLeft: '-55%', marginTop: '-55%', animationDelay: '-30s' }}>
-                  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-1.5 h-1.5 bg-[var(--text-faint)] rounded-full opacity-50" />
-                </div>
-
-                {/* Horizontal scan line — contained */}
-                <div className="absolute top-[30%] left-0 right-0 h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20 -z-10" />
+                {/* Horizontal scan line */}
+                <div className="absolute top-[25%] left-[-5%] right-[-5%] h-px bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent opacity-20 -z-10" />
 
                 {/* Coordinate labels */}
-                <span className="absolute top-0 right-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60 pointer-events-none">
+                <span className="absolute top-0 right-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60">
                   21.1702°N
                 </span>
-                <span className="absolute bottom-10 left-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60 pointer-events-none">
+                <span className="absolute bottom-[15%] left-0 label text-[0.5rem] text-[var(--text-faint)] opacity-60">
                   72.8311°E
                 </span>
 
                 {/* Status indicator */}
-                <div className="absolute top-2 left-2 flex items-center gap-1.5 pointer-events-none">
+                <div className="absolute top-2 left-2 flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 opacity-70" />
                   <span className="label text-[0.5rem] text-[var(--text-faint)] opacity-60">SYS.ACTIVE</span>
                 </div>
               </div>
 
-              {/* === PORTRAIT IMAGE === */}
-              <img
-                src="/PJ.png"
-                alt="Prince Jasani — Full-Stack Developer"
-                className="relative z-10 w-full h-auto"
-                loading="eager"
-              />
+              {/* === PORTRAIT IMAGE with bottom fade === */}
+              <div className="relative z-10">
+                <img
+                  src="/PJ.png"
+                  alt="Prince Jasani — Full-Stack Developer"
+                  className="w-full h-auto"
+                  loading="eager"
+                />
+                {/* Bottom gradient fade — blends image into background */}
+                <div className="absolute bottom-0 left-0 right-0 h-[25%] bg-gradient-to-t from-[var(--bg)] via-[var(--bg)]/60 to-transparent" />
+              </div>
 
               {/* Info block — flows into document on mobile, positioned on larger screens */}
-              <div className="relative sm:absolute sm:right-0 lg:-right-5 sm:top-[50%] z-20 bg-[var(--bg)] border border-[var(--border)] px-3 py-2.5 mt-4 sm:mt-0 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)]">
+              <div className="relative sm:absolute sm:right-0 lg:-right-5 sm:top-[45%] z-20 bg-[var(--bg)] border border-[var(--border)] px-3 py-2.5 mt-4 sm:mt-0 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--accent)]">
                 <span className="label text-[var(--accent)] block mb-1.5">What I Build</span>
                 <div className="flex sm:block gap-x-4 gap-y-0.5 flex-wrap">
                   <p className="text-[0.6875rem] text-[var(--text-secondary)]">Web Applications</p>
